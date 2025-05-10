@@ -4,7 +4,8 @@ const express = require("express");
 const app = express();
 
 const keyVaultName = "RoshKeyvault"; // your vault name
-const vaultUrl = `https://${keyVaultName}.vault.azure.net`;
+//const vaultUrl = `https://${keyVaultName}.vault.azure.net`;
+const vaultUrl = 'https://roshkeyvault.vault.azure.net';
 const credential = new DefaultAzureCredential();
 const client = new SecretClient(vaultUrl, credential);
 
