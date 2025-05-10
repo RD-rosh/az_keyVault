@@ -10,6 +10,7 @@ const credential = new DefaultAzureCredential();
 const client = new SecretClient(vaultUrl, credential);
 
 app.get("/", async (req, res) => {
+  res.send('Hello from Azure App Service!');
   try {
     const secret = await client.getSecret("ROSHsecretKey"); //you secret name
     res.send(`Secret value: ${secret.value}`);
@@ -20,4 +21,7 @@ app.get("/", async (req, res) => {
 });
 
 //app.listen(3000, () => console.log("App running on http://localhost:3000"));
-app.listen(3000, '0.0.0.0', () => {console.log("App running on http://localhost:3000"));
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
+});
