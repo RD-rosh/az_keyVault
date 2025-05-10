@@ -19,4 +19,5 @@ app.get("/", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("App running on http://localhost:3000"));
+//app.listen(3000, () => console.log("App running on http://localhost:3000"));
+app.listen(3000, '0.0.0.0', () => {console.log("App running on http://localhost:3000"));
