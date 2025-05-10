@@ -10,9 +10,10 @@ const credential = new DefaultAzureCredential();
 const client = new SecretClient(vaultUrl, credential);
 
 app.get("/", async (req, res) => {
-  res.send('Hello from Azure App Service!');
+  
   try {
     const secret = await client.getSecret("ROSHsecretKey"); //you secret name
+    res.send('Hello from Azure App Service!');
     res.send(`Secret value: ${secret.value}`);
   } catch (err) {
     console.error(err);
