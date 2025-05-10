@@ -1,5 +1,5 @@
 {
-  "name": "az_vault_lab",
+  "name": "az_keyVault",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
